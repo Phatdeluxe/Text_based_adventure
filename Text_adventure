@@ -73,6 +73,20 @@ def tutorial_area():
         a robed man. (Try using 'talk' on the man)
         '''
 
+        man_text = '''
+        Ahhh, I see you have finally made your way here. Take a look around you,
+        you may never see this place again, but the lessons you learn here
+        will be invaluable on the journey ahead. (Try using 'look' command)
+        '''
+
+        look_text = '''
+        As you look around yourself you notice that you have seen this place
+        before. Was it in a dream. Or maybe somewhere you lived in a past life.
+        As the surrounding become more familiar you see a large tree in the
+        distance. You remember that something is hidden at the base of the tree.
+        (Try using the go command on the tree)
+        '''
+
         print(tut_intro)
 
         input_string = input('What would you like to do? ')
@@ -80,7 +94,11 @@ def tutorial_area():
         print('\n')
 
         if ('talk' in input_string) and ('man' in input_string):
-            print('talked to man')
+            print(man_text)
+        elif input_string == 'look':
+            print(look_text)
+        elif ('go' in input_string) and ('tree' in input_string):
+            print('you go to tree') 
         elif input_string == 'exit':
             keep_running = 0
             intro()
