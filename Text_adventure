@@ -1,0 +1,98 @@
+"""code for a text based adventure"""
+
+invalid = 'Sorry, that is an invalid command, try typing "help" for more information \n'
+
+def intro():
+    intro_text = '''
+    Welcome to my text based adventure. This was made using Python3.
+    To start the game type "start", to exit type "exit".
+    '''
+    keep_running = 1
+    while keep_running == 1:
+        print(intro_text)
+
+        input_string= input()
+
+        if input_string == 'start':
+            keep_running = 0
+            tutorial_area()
+        elif input_string == 'exit':
+            # keep_running = 0
+            break
+        else:
+            print(invalid)
+
+
+def help():
+
+    help_text = '''
+           Helpful commands:
+           look
+           use
+           take
+           talk
+           go
+           type help <command> for examples
+           '''
+
+    input_prompt = '''For more information about these commands, type the command
+                      To return to game type "close": '''
+
+    keep_going = 1
+
+    while keep_going == 1:
+
+        print(help_text)
+
+        input_string = input(input_prompt)
+
+        if input_string == 'close':
+            keep_going = 0
+            test()
+        elif input_string == 'look':
+            print(look_text) #TODO: make look_text
+        elif input_string == 'use':
+            print(use_text) #TODO: make use_text
+        elif input_string == 'take':
+            print(take_text) #TODO: make take_text
+        elif input_string == 'talk':
+            print(talk_text) #TODO: make talk_text
+        elif input_string == 'go':
+            print(go_text) #TODO: make go_text
+        else:
+            print(invalid)
+
+
+def tutorial_area():
+
+    keep_running = 1
+    while keep_running == 1:
+        tut_intro = '''
+        Beneath your eyelids shapes twist ans twirl. You have the sensation
+        of falling. As you slow down you open your eyes. In front of you stands
+        a robed man. (Try using 'talk' on the man)
+        '''
+
+        print(tut_intro)
+
+        input_string = input('What would you like to do? ')
+
+        print('\n')
+
+        if ('talk' in input_string) and ('man' in input_string):
+            print('talked to man')
+        elif input_string == 'exit':
+            keep_running = 0
+            intro()
+        elif input_string == 'help':
+            keep_running = 0
+            help()
+
+        else:
+            print(invalid)
+
+    # print('input recieved')
+
+
+if __name__ == '__main__':
+    intro()
