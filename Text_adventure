@@ -2,25 +2,24 @@
 
 invalid = 'Sorry, that is an invalid command, try typing "help" for more information \n'
 
-def intro():
-    intro_text = '''
-    Welcome to my text based adventure. This was made using Python3.
-    To start the game type "start", to exit type "exit".
-    '''
-    keep_running = 1
-    while keep_running == 1:
-        print(intro_text)
 
-        input_string= input()
+intro_text = '''
+Welcome to my text based adventure. This was made using Python3.
+To start the game type "start", to exit type "exit".
+'''
+print(intro_text)
 
-        if input_string == 'start':
-            keep_running = 0
-            tutorial_area()
-        elif input_string == 'exit':
-            # keep_running = 0
-            break
-        else:
-            print(invalid)
+while True:
+
+    cmd = input('->')
+
+    if input_string == 'start':
+        tutorial_area()
+    elif input_string == 'exit':
+        # keep_running = 0
+        break
+    else:
+        print(invalid)
 
 
 def help():
@@ -98,7 +97,7 @@ def tutorial_area():
         elif input_string == 'look':
             print(look_text)
         elif ('go' in input_string) and ('tree' in input_string):
-            print('you go to tree') 
+            print('you go to tree')
         elif input_string == 'exit':
             keep_running = 0
             intro()
