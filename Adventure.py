@@ -6,6 +6,7 @@ from World import Location
 tutorial = Location('tutorial area')
 tutorial.description = 'A sparsely populated area with only a tree and an old man sitting beneath it.'
 
+
 foyer = Location('foyer')
 foyer.description = 'A well lit foyer with stairs leading up and down, and doors to both the left and right.'
 
@@ -18,7 +19,15 @@ kitchen.description = 'A small table sits in the center of the room. The sound o
 diningroom = Location('Dining room')
 diningroom.description = 'A nicely set table take up the majority of this room. A caibnet full of silverware and plates sit at one end of the room. There are doors back into the kitchen and into the hallway'
 
+hallway = Location('Hallway')
+hallway.description = 'A small hallway that leads to a mud room. There are doors to the dining room, the mudroom and a closet'
+
+closet = Point_of_interest('closet')
+closet.description =
+
+
 tutorial.directions['foyer'] = foyer
+
 foyer.directions['study'] = study
 foyer.directions['kitchen'] = kitchen
 

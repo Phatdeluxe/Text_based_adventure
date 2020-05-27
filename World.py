@@ -14,3 +14,12 @@ class Location():
 class Point_of_interest(Location):
     def __init__(self):
         super().__init__()
+
+
+class Room:
+    def __init__(self, name):
+        self.name = name
+
+class MonsterRoom(Room):
+    def __init__(self, monster):
+        self.monster = monster
